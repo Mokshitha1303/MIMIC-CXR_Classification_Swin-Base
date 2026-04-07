@@ -1,0 +1,11 @@
+2026-04-04 18:50:34 | Logging to ./logs/training_20260404_185034.log
+2026-04-04 18:50:34 | Config: configs/config.yaml
+2026-04-04 18:50:34 | Smoke test: False
+2026-04-04 18:50:34 | Device: cuda
+2026-04-04 18:50:34 | GPU: NVIDIA A100-SXM4-80GB
+2026-04-04 18:50:34 | Building datasets …
+2026-04-04 18:51:04 | Building model …
+2026-04-04 18:51:07 | No checkpoint found — starting from scratch.
+2026-04-04 18:51:07 | Starting training from epoch 1 / 50
+2026-04-04 18:51:07 | Classes: ['No Finding', 'Enlarged Cardiomediastinum', 'Cardiomegaly', 'Lung Opacity', 'Lung Lesion', 'Edema', 'Consolidation', 'Pneumonia', 'Atelectasis', 'Pneumothorax', 'Pleural Effusion', 'Pleural Other', 'Fracture', 'Support Devices']
+2026-04-04 18:51:07 | --------------------------------------------------------------------------------

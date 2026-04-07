@@ -1,0 +1,34 @@
+2026-04-04 17:58:23 | Logging to ./logs/training_20260404_175823.log
+2026-04-04 17:58:23 | Config: configs/config.yaml
+2026-04-04 17:58:23 | Smoke test: True
+2026-04-04 17:58:23 | Device: cuda
+2026-04-04 17:58:23 | GPU: NVIDIA A100-SXM4-80GB
+2026-04-04 17:58:23 | Building datasets …
+2026-04-04 17:58:53 | === SMOKE TEST MODE (2 batches per split) ===
+2026-04-04 17:58:53 | Building model …
+2026-04-04 17:59:03 | No checkpoint found — starting from scratch.
+2026-04-04 17:59:03 | Starting training from epoch 1 / 50
+2026-04-04 17:59:03 | Classes: ['No Finding', 'Enlarged Cardiomediastinum', 'Cardiomegaly', 'Lung Opacity', 'Lung Lesion', 'Edema', 'Consolidation', 'Pneumonia', 'Atelectasis', 'Pneumothorax', 'Pleural Effusion', 'Pleural Other', 'Fracture', 'Support Devices']
+2026-04-04 17:59:03 | --------------------------------------------------------------------------------
+2026-04-04 18:00:09 | Epoch   1/50 | train_loss=0.6959 | val_loss=0.6200 | mean_AUC=0.5103 | lr=2.00e-05 | time=67s
+2026-04-04 18:00:09 | 
+  Class                         AUC
+  ------------------------------------
+  No Finding                     0.4897
+  Enlarged Cardiomediastinum     0.5555
+  Cardiomegaly                   0.5490
+  Lung Opacity                   0.5342
+  Lung Lesion                      N/A 
+  Edema                          0.5681
+  Consolidation                  0.4080
+  Pneumonia                      0.5292
+  Atelectasis                    0.6142
+  Pneumothorax                   0.5787
+  Pleural Effusion               0.4961
+  Pleural Other                  0.4194
+  Fracture                       0.5867
+  Support Devices                0.3053
+  ------------------------------------
+  Mean AUC                       0.5103
+2026-04-04 18:00:14 |   ★ Saved to top-3 checkpoints (AUC=0.5103)
+2026-04-04 18:00:14 | --------------------------------------------------------------------------------

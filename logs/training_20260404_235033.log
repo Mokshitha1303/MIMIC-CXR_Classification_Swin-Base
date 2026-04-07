@@ -1,0 +1,566 @@
+2026-04-04 23:50:33 | Log file: ./logs/training_20260404_235033.log
+2026-04-04 23:50:33 | Config: configs/config.yaml | smoke_test=False
+2026-04-04 23:50:33 | Device: cuda — NVIDIA A100-SXM4-80GB
+2026-04-04 23:50:33 | Building datasets …
+2026-04-04 23:50:54 | Per-class pos_weight (neg/pos ratio, clamped [0.1, 50]):
+2026-04-04 23:50:54 |   No Finding                          1.98
+2026-04-04 23:50:54 |   Enlarged Cardiomediastinum          30.92
+2026-04-04 23:50:54 |   Cardiomegaly                        4.13
+2026-04-04 23:50:54 |   Lung Opacity                        3.47
+2026-04-04 23:50:54 |   Lung Lesion                         35.98
+2026-04-04 23:50:54 |   Edema                               7.40
+2026-04-04 23:50:54 |   Consolidation                       20.19
+2026-04-04 23:50:54 |   Pneumonia                           13.20
+2026-04-04 23:50:54 |   Atelectasis                         4.00
+2026-04-04 23:50:54 |   Pneumothorax                        20.54
+2026-04-04 23:50:54 |   Pleural Effusion                    3.24
+2026-04-04 23:50:54 |   Pleural Other                       50.00
+2026-04-04 23:50:54 |   Fracture                            49.89
+2026-04-04 23:50:54 |   Support Devices                     2.33
+2026-04-04 23:50:54 | Building model …
+2026-04-04 23:51:01 | No checkpoint found — starting from scratch.
+2026-04-04 23:51:01 | Training epochs 1–50 | classes=14
+2026-04-04 23:51:01 | ================================================================================
+2026-04-05 00:04:52 | Epoch 1 | train_loss=1.1296 | interim checkpoint saved | lr=5.00e-06
+2026-04-05 00:05:06 | Epoch   1/50 | train_loss=1.1296 | val_loss=1.1213 | mean_AUC=0.7395 | lr=5.00e-06 | time=845s
+2026-04-05 00:05:06 | 
+  Class                         AUC
+  ------------------------------------
+  No Finding                     0.8178
+  Enlarged Cardiomediastinum     0.6807
+  Cardiomegaly                   0.7395
+  Lung Opacity                   0.6967
+  Lung Lesion                    0.6715
+  Edema                          0.8436
+  Consolidation                  0.7064
+  Pneumonia                      0.7032
+  Atelectasis                    0.7588
+  Pneumothorax                   0.7049
+  Pleural Effusion               0.8430
+  Pleural Other                  0.6882
+  Fracture                       0.6408
+  Support Devices                0.8582
+  ------------------------------------
+  Mean AUC                       0.7395
+2026-04-05 00:05:11 |   ★ Saved to top-3 (AUC=0.7395)
+2026-04-05 00:05:11 | ================================================================================
+2026-04-05 00:13:49 | Epoch 2 | train_loss=1.0759 | interim checkpoint saved | lr=1.00e-05
+2026-04-05 00:13:56 | Epoch   2/50 | train_loss=1.0759 | val_loss=1.0768 | mean_AUC=0.7601 | lr=1.00e-05 | time=525s
+2026-04-05 00:13:56 | 
+  Class                         AUC
+  ------------------------------------
+  No Finding                     0.8306
+  Enlarged Cardiomediastinum     0.7114
+  Cardiomegaly                   0.7650
+  Lung Opacity                   0.7196
+  Lung Lesion                    0.6299
+  Edema                          0.8583
+  Consolidation                  0.7396
+  Pneumonia                      0.7308
+  Atelectasis                    0.7829
+  Pneumothorax                   0.7608
+  Pleural Effusion               0.8772
+  Pleural Other                  0.7428
+  Fracture                       0.6164
+  Support Devices                0.8761
+  ------------------------------------
+  Mean AUC                       0.7601
+2026-04-05 00:14:01 |   ★ Saved to top-3 (AUC=0.7601)
+2026-04-05 00:14:01 | ================================================================================
+2026-04-05 00:22:31 | Epoch 3 | train_loss=1.0486 | interim checkpoint saved | lr=1.50e-05
+2026-04-05 00:22:33 | Epoch   3/50 | train_loss=1.0486 | val_loss=1.0855 | mean_AUC=0.7734 | lr=1.50e-05 | time=512s
+2026-04-05 00:22:33 | 
+  Class                         AUC
+  ------------------------------------
+  No Finding                     0.8358
+  Enlarged Cardiomediastinum     0.7083
+  Cardiomegaly                   0.7757
+  Lung Opacity                   0.7259
+  Lung Lesion                    0.6669
+  Edema                          0.8619
+  Consolidation                  0.7513
+  Pneumonia                      0.7537
+  Atelectasis                    0.7870
+  Pneumothorax                   0.7695
+  Pleural Effusion               0.8881
+  Pleural Other                  0.7468
+  Fracture                       0.6666
+  Support Devices                0.8906
+  ------------------------------------
+  Mean AUC                       0.7734
+2026-04-05 00:22:38 |   ★ Saved to top-3 (AUC=0.7734)
+2026-04-05 00:22:38 | ================================================================================
+2026-04-05 00:31:08 | Epoch 4 | train_loss=1.0288 | interim checkpoint saved | lr=2.00e-05
+2026-04-05 00:31:13 | Epoch   4/50 | train_loss=1.0288 | val_loss=1.0605 | mean_AUC=0.7795 | lr=2.00e-05 | time=515s
+2026-04-05 00:31:13 | 
+  Class                         AUC
+  ------------------------------------
+  No Finding                     0.8427
+  Enlarged Cardiomediastinum     0.7061
+  Cardiomegaly                   0.7825
+  Lung Opacity                   0.7326
+  Lung Lesion                    0.6997
+  Edema                          0.8641
+  Consolidation                  0.7456
+  Pneumonia                      0.7511
+  Atelectasis                    0.7922
+  Pneumothorax                   0.7857
+  Pleural Effusion               0.8930
+  Pleural Other                  0.7620
+  Fracture                       0.6593
+  Support Devices                0.8968
+  ------------------------------------
+  Mean AUC                       0.7795
+2026-04-05 00:31:17 |   ★ Saved to top-3 (AUC=0.7795)
+2026-04-05 00:31:17 | ================================================================================
+2026-04-05 00:39:48 | Epoch 5 | train_loss=1.0168 | interim checkpoint saved | lr=2.50e-05
+2026-04-05 00:39:52 | Epoch   5/50 | train_loss=1.0168 | val_loss=1.0580 | mean_AUC=0.7860 | lr=2.50e-05 | time=514s
+2026-04-05 00:39:52 | 
+  Class                         AUC
+  ------------------------------------
+  No Finding                     0.8459
+  Enlarged Cardiomediastinum     0.7153
+  Cardiomegaly                   0.7916
+  Lung Opacity                   0.7379
+  Lung Lesion                    0.6881
+  Edema                          0.8679
+  Consolidation                  0.7531
+  Pneumonia                      0.7590
+  Atelectasis                    0.7966
+  Pneumothorax                   0.7899
+  Pleural Effusion               0.8960
+  Pleural Other                  0.7969
+  Fracture                       0.6641
+  Support Devices                0.9010
+  ------------------------------------
+  Mean AUC                       0.7860
+2026-04-05 00:39:56 |   ★ Saved to top-3 (AUC=0.7860)
+2026-04-05 00:39:56 | ================================================================================
+2026-04-05 00:48:27 | Epoch 6 | train_loss=1.0071 | interim checkpoint saved | lr=3.00e-05
+2026-04-05 00:48:29 | Epoch   6/50 | train_loss=1.0071 | val_loss=1.0646 | mean_AUC=0.7911 | lr=3.00e-05 | time=513s
+2026-04-05 00:48:29 | 
+  Class                         AUC
+  ------------------------------------
+  No Finding                     0.8492
+  Enlarged Cardiomediastinum     0.7180
+  Cardiomegaly                   0.7946
+  Lung Opacity                   0.7315
+  Lung Lesion                    0.6933
+  Edema                          0.8673
+  Consolidation                  0.7525
+  Pneumonia                      0.7613
+  Atelectasis                    0.8014
+  Pneumothorax                   0.8056
+  Pleural Effusion               0.8986
+  Pleural Other                  0.8081
+  Fracture                       0.6907
+  Support Devices                0.9031
+  ------------------------------------
+  Mean AUC                       0.7911
+2026-04-05 00:48:33 |   ★ Saved to top-3 (AUC=0.7911)
+2026-04-05 00:48:33 | ================================================================================
+2026-04-05 00:57:04 | Epoch 7 | train_loss=0.9987 | interim checkpoint saved | lr=3.50e-05
+2026-04-05 00:57:07 | Epoch   7/50 | train_loss=0.9987 | val_loss=1.0318 | mean_AUC=0.8009 | lr=3.50e-05 | time=514s
+2026-04-05 00:57:07 | 
+  Class                         AUC
+  ------------------------------------
+  No Finding                     0.8551
+  Enlarged Cardiomediastinum     0.7170
+  Cardiomegaly                   0.7934
+  Lung Opacity                   0.7347
+  Lung Lesion                    0.7654
+  Edema                          0.8715
+  Consolidation                  0.7631
+  Pneumonia                      0.7719
+  Atelectasis                    0.8039
+  Pneumothorax                   0.8150
+  Pleural Effusion               0.8954
+  Pleural Other                  0.8263
+  Fracture                       0.6927
+  Support Devices                0.9065
+  ------------------------------------
+  Mean AUC                       0.8009
+2026-04-05 00:57:12 |   ★ Saved to top-3 (AUC=0.8009)
+2026-04-05 00:57:12 | ================================================================================
+2026-04-05 01:05:42 | Epoch 8 | train_loss=0.9932 | interim checkpoint saved | lr=4.00e-05
+2026-04-05 01:05:45 | Epoch   8/50 | train_loss=0.9932 | val_loss=1.0086 | mean_AUC=0.8029 | lr=4.00e-05 | time=514s
+2026-04-05 01:05:45 | 
+  Class                         AUC
+  ------------------------------------
+  No Finding                     0.8556
+  Enlarged Cardiomediastinum     0.7200
+  Cardiomegaly                   0.7931
+  Lung Opacity                   0.7482
+  Lung Lesion                    0.7790
+  Edema                          0.8719
+  Consolidation                  0.7743
+  Pneumonia                      0.7781
+  Atelectasis                    0.8023
+  Pneumothorax                   0.8388
+  Pleural Effusion               0.8992
+  Pleural Other                  0.8205
+  Fracture                       0.6519
+  Support Devices                0.9073
+  ------------------------------------
+  Mean AUC                       0.8029
+2026-04-05 01:05:50 |   ★ Saved to top-3 (AUC=0.8029)
+2026-04-05 01:05:50 | ================================================================================
+2026-04-05 01:14:20 | Epoch 9 | train_loss=0.9879 | interim checkpoint saved | lr=4.50e-05
+2026-04-05 01:14:23 | Epoch   9/50 | train_loss=0.9879 | val_loss=1.0210 | mean_AUC=0.7984 | lr=4.50e-05 | time=512s
+2026-04-05 01:14:23 | 
+  Class                         AUC
+  ------------------------------------
+  No Finding                     0.8558
+  Enlarged Cardiomediastinum     0.7289
+  Cardiomegaly                   0.7972
+  Lung Opacity                   0.7447
+  Lung Lesion                    0.7467
+  Edema                          0.8762
+  Consolidation                  0.7635
+  Pneumonia                      0.7636
+  Atelectasis                    0.8038
+  Pneumothorax                   0.8319
+  Pleural Effusion               0.8998
+  Pleural Other                  0.8047
+  Fracture                       0.6517
+  Support Devices                0.9091
+  ------------------------------------
+  Mean AUC                       0.7984
+2026-04-05 01:14:27 |   ★ Saved to top-3 (AUC=0.7984)
+2026-04-05 01:14:27 | ================================================================================
+2026-04-05 01:22:59 | Epoch 10 | train_loss=0.9835 | interim checkpoint saved | lr=5.00e-05
+2026-04-05 01:23:02 | Epoch  10/50 | train_loss=0.9835 | val_loss=1.0258 | mean_AUC=0.8014 | lr=5.00e-05 | time=514s
+2026-04-05 01:23:02 | 
+  Class                         AUC
+  ------------------------------------
+  No Finding                     0.8509
+  Enlarged Cardiomediastinum     0.7257
+  Cardiomegaly                   0.7957
+  Lung Opacity                   0.7311
+  Lung Lesion                    0.7549
+  Edema                          0.8775
+  Consolidation                  0.7746
+  Pneumonia                      0.7503
+  Atelectasis                    0.7934
+  Pneumothorax                   0.8340
+  Pleural Effusion               0.8993
+  Pleural Other                  0.8181
+  Fracture                       0.7076
+  Support Devices                0.9069
+  ------------------------------------
+  Mean AUC                       0.8014
+2026-04-05 01:23:06 |   ★ Saved to top-3 (AUC=0.8014)
+2026-04-05 01:23:06 | ================================================================================
+2026-04-05 01:31:36 | Epoch 11 | train_loss=0.9762 | interim checkpoint saved | lr=5.00e-05
+2026-04-05 01:31:40 | Epoch  11/50 | train_loss=0.9762 | val_loss=1.0157 | mean_AUC=0.8049 | lr=5.00e-05 | time=513s
+2026-04-05 01:31:40 | 
+  Class                         AUC
+  ------------------------------------
+  No Finding                     0.8502
+  Enlarged Cardiomediastinum     0.7266
+  Cardiomegaly                   0.7950
+  Lung Opacity                   0.7414
+  Lung Lesion                    0.8056
+  Edema                          0.8737
+  Consolidation                  0.7734
+  Pneumonia                      0.7771
+  Atelectasis                    0.7984
+  Pneumothorax                   0.8481
+  Pleural Effusion               0.8964
+  Pleural Other                  0.8008
+  Fracture                       0.6705
+  Support Devices                0.9114
+  ------------------------------------
+  Mean AUC                       0.8049
+2026-04-05 01:31:44 |   ★ Saved to top-3 (AUC=0.8049)
+2026-04-05 01:31:44 | ================================================================================
+2026-04-05 01:40:16 | Epoch 12 | train_loss=0.9693 | interim checkpoint saved | lr=4.99e-05
+2026-04-05 01:40:19 | Epoch  12/50 | train_loss=0.9693 | val_loss=1.0261 | mean_AUC=0.8049 | lr=4.99e-05 | time=515s
+2026-04-05 01:40:19 | 
+  Class                         AUC
+  ------------------------------------
+  No Finding                     0.8560
+  Enlarged Cardiomediastinum     0.7201
+  Cardiomegaly                   0.7969
+  Lung Opacity                   0.7300
+  Lung Lesion                    0.7931
+  Edema                          0.8733
+  Consolidation                  0.7745
+  Pneumonia                      0.7590
+  Atelectasis                    0.8049
+  Pneumothorax                   0.8266
+  Pleural Effusion               0.9020
+  Pleural Other                  0.8699
+  Fracture                       0.6523
+  Support Devices                0.9101
+  ------------------------------------
+  Mean AUC                       0.8049
+2026-04-05 01:40:24 |   ★ Saved to top-3 (AUC=0.8049)
+2026-04-05 01:40:24 | ================================================================================
+2026-04-05 01:48:57 | Epoch 13 | train_loss=0.9600 | interim checkpoint saved | lr=4.97e-05
+2026-04-05 01:48:59 | Epoch  13/50 | train_loss=0.9600 | val_loss=1.0313 | mean_AUC=0.8051 | lr=4.97e-05 | time=515s
+2026-04-05 01:48:59 | 
+  Class                         AUC
+  ------------------------------------
+  No Finding                     0.8511
+  Enlarged Cardiomediastinum     0.7281
+  Cardiomegaly                   0.7991
+  Lung Opacity                   0.7377
+  Lung Lesion                    0.7811
+  Edema                          0.8725
+  Consolidation                  0.7617
+  Pneumonia                      0.7529
+  Atelectasis                    0.7963
+  Pneumothorax                   0.8498
+  Pleural Effusion               0.8959
+  Pleural Other                  0.8405
+  Fracture                       0.6926
+  Support Devices                0.9126
+  ------------------------------------
+  Mean AUC                       0.8051
+2026-04-05 01:49:05 |   ★ Saved to top-3 (AUC=0.8051)
+2026-04-05 01:49:05 | ================================================================================
+2026-04-05 01:57:38 | Epoch 14 | train_loss=0.9532 | interim checkpoint saved | lr=4.93e-05
+2026-04-05 01:57:41 | Epoch  14/50 | train_loss=0.9532 | val_loss=1.0037 | mean_AUC=0.8085 | lr=4.93e-05 | time=516s
+2026-04-05 01:57:41 | 
+  Class                         AUC
+  ------------------------------------
+  No Finding                     0.8560
+  Enlarged Cardiomediastinum     0.7323
+  Cardiomegaly                   0.8002
+  Lung Opacity                   0.7397
+  Lung Lesion                    0.7974
+  Edema                          0.8762
+  Consolidation                  0.7864
+  Pneumonia                      0.7647
+  Atelectasis                    0.8045
+  Pneumothorax                   0.8464
+  Pleural Effusion               0.9019
+  Pleural Other                  0.8356
+  Fracture                       0.6639
+  Support Devices                0.9134
+  ------------------------------------
+  Mean AUC                       0.8085
+2026-04-05 01:57:45 |   ★ Saved to top-3 (AUC=0.8085)
+2026-04-05 01:57:45 | ================================================================================
+2026-04-05 02:06:19 | Epoch 15 | train_loss=0.9435 | interim checkpoint saved | lr=4.88e-05
+2026-04-05 02:06:23 | Epoch  15/50 | train_loss=0.9435 | val_loss=1.0380 | mean_AUC=0.8093 | lr=4.88e-05 | time=518s
+2026-04-05 02:06:23 | 
+  Class                         AUC
+  ------------------------------------
+  No Finding                     0.8522
+  Enlarged Cardiomediastinum     0.7420
+  Cardiomegaly                   0.8023
+  Lung Opacity                   0.7311
+  Lung Lesion                    0.7891
+  Edema                          0.8687
+  Consolidation                  0.7782
+  Pneumonia                      0.7603
+  Atelectasis                    0.8049
+  Pneumothorax                   0.8534
+  Pleural Effusion               0.8987
+  Pleural Other                  0.8545
+  Fracture                       0.6830
+  Support Devices                0.9111
+  ------------------------------------
+  Mean AUC                       0.8093
+2026-04-05 02:06:28 |   ★ Saved to top-3 (AUC=0.8093)
+2026-04-05 02:06:28 | ================================================================================
+2026-04-05 02:15:02 | Epoch 16 | train_loss=0.9391 | interim checkpoint saved | lr=4.81e-05
+2026-04-05 02:15:06 | Epoch  16/50 | train_loss=0.9391 | val_loss=1.0355 | mean_AUC=0.8038 | lr=4.81e-05 | time=518s
+2026-04-05 02:15:06 | 
+  Class                         AUC
+  ------------------------------------
+  No Finding                     0.8528
+  Enlarged Cardiomediastinum     0.7136
+  Cardiomegaly                   0.8026
+  Lung Opacity                   0.7329
+  Lung Lesion                    0.7744
+  Edema                          0.8739
+  Consolidation                  0.7637
+  Pneumonia                      0.7531
+  Atelectasis                    0.8087
+  Pneumothorax                   0.8530
+  Pleural Effusion               0.9018
+  Pleural Other                  0.8435
+  Fracture                       0.6704
+  Support Devices                0.9086
+  ------------------------------------
+  Mean AUC                       0.8038
+2026-04-05 02:15:10 | ================================================================================
+2026-04-05 02:23:43 | Epoch 17 | train_loss=0.9301 | interim checkpoint saved | lr=4.73e-05
+2026-04-05 02:23:46 | Epoch  17/50 | train_loss=0.9301 | val_loss=1.0537 | mean_AUC=0.8001 | lr=4.73e-05 | time=516s
+2026-04-05 02:23:46 | 
+  Class                         AUC
+  ------------------------------------
+  No Finding                     0.8522
+  Enlarged Cardiomediastinum     0.7084
+  Cardiomegaly                   0.7976
+  Lung Opacity                   0.7303
+  Lung Lesion                    0.7719
+  Edema                          0.8810
+  Consolidation                  0.7657
+  Pneumonia                      0.7549
+  Atelectasis                    0.8040
+  Pneumothorax                   0.8675
+  Pleural Effusion               0.8986
+  Pleural Other                  0.8033
+  Fracture                       0.6570
+  Support Devices                0.9096
+  ------------------------------------
+  Mean AUC                       0.8001
+2026-04-05 02:23:50 | ================================================================================
+2026-04-05 02:32:18 | Epoch 18 | train_loss=0.9200 | interim checkpoint saved | lr=4.64e-05
+2026-04-05 02:32:20 | Epoch  18/50 | train_loss=0.9200 | val_loss=1.0457 | mean_AUC=0.8010 | lr=4.64e-05 | time=511s
+2026-04-05 02:32:20 | 
+  Class                         AUC
+  ------------------------------------
+  No Finding                     0.8499
+  Enlarged Cardiomediastinum     0.7208
+  Cardiomegaly                   0.7849
+  Lung Opacity                   0.7376
+  Lung Lesion                    0.7778
+  Edema                          0.8787
+  Consolidation                  0.7718
+  Pneumonia                      0.7601
+  Atelectasis                    0.8071
+  Pneumothorax                   0.8518
+  Pleural Effusion               0.8989
+  Pleural Other                  0.7936
+  Fracture                       0.6705
+  Support Devices                0.9103
+  ------------------------------------
+  Mean AUC                       0.8010
+2026-04-05 02:32:24 | ================================================================================
+2026-04-05 02:40:53 | Epoch 19 | train_loss=0.9117 | interim checkpoint saved | lr=4.53e-05
+2026-04-05 02:40:55 | Epoch  19/50 | train_loss=0.9117 | val_loss=1.0419 | mean_AUC=0.8042 | lr=4.53e-05 | time=512s
+2026-04-05 02:40:55 | 
+  Class                         AUC
+  ------------------------------------
+  No Finding                     0.8510
+  Enlarged Cardiomediastinum     0.7184
+  Cardiomegaly                   0.7906
+  Lung Opacity                   0.7435
+  Lung Lesion                    0.7903
+  Edema                          0.8725
+  Consolidation                  0.7585
+  Pneumonia                      0.7683
+  Atelectasis                    0.8063
+  Pneumothorax                   0.8527
+  Pleural Effusion               0.8994
+  Pleural Other                  0.8389
+  Fracture                       0.6559
+  Support Devices                0.9128
+  ------------------------------------
+  Mean AUC                       0.8042
+2026-04-05 02:40:59 | ================================================================================
+2026-04-05 02:49:26 | Epoch 20 | train_loss=0.9030 | interim checkpoint saved | lr=4.41e-05
+2026-04-05 02:49:30 | Epoch  20/50 | train_loss=0.9030 | val_loss=1.0869 | mean_AUC=0.8038 | lr=4.41e-05 | time=511s
+2026-04-05 02:49:30 | 
+  Class                         AUC
+  ------------------------------------
+  No Finding                     0.8535
+  Enlarged Cardiomediastinum     0.7094
+  Cardiomegaly                   0.7936
+  Lung Opacity                   0.7377
+  Lung Lesion                    0.7926
+  Edema                          0.8741
+  Consolidation                  0.7595
+  Pneumonia                      0.7554
+  Atelectasis                    0.8051
+  Pneumothorax                   0.8558
+  Pleural Effusion               0.8983
+  Pleural Other                  0.8240
+  Fracture                       0.6815
+  Support Devices                0.9128
+  ------------------------------------
+  Mean AUC                       0.8038
+2026-04-05 02:49:34 | ================================================================================
+2026-04-05 02:58:01 | Epoch 21 | train_loss=0.8923 | interim checkpoint saved | lr=4.28e-05
+2026-04-05 02:58:03 | Epoch  21/50 | train_loss=0.8923 | val_loss=1.1000 | mean_AUC=0.7990 | lr=4.28e-05 | time=509s
+2026-04-05 02:58:03 | 
+  Class                         AUC
+  ------------------------------------
+  No Finding                     0.8548
+  Enlarged Cardiomediastinum     0.7054
+  Cardiomegaly                   0.8012
+  Lung Opacity                   0.7370
+  Lung Lesion                    0.7616
+  Edema                          0.8786
+  Consolidation                  0.7693
+  Pneumonia                      0.7502
+  Atelectasis                    0.8047
+  Pneumothorax                   0.8594
+  Pleural Effusion               0.8992
+  Pleural Other                  0.7859
+  Fracture                       0.6650
+  Support Devices                0.9138
+  ------------------------------------
+  Mean AUC                       0.7990
+2026-04-05 02:58:07 | ================================================================================
+2026-04-05 03:06:34 | Epoch 22 | train_loss=0.8835 | interim checkpoint saved | lr=4.14e-05
+2026-04-05 03:06:36 | Epoch  22/50 | train_loss=0.8835 | val_loss=1.1229 | mean_AUC=0.8014 | lr=4.14e-05 | time=509s
+2026-04-05 03:06:36 | 
+  Class                         AUC
+  ------------------------------------
+  No Finding                     0.8539
+  Enlarged Cardiomediastinum     0.7084
+  Cardiomegaly                   0.7983
+  Lung Opacity                   0.7382
+  Lung Lesion                    0.7431
+  Edema                          0.8737
+  Consolidation                  0.7657
+  Pneumonia                      0.7669
+  Atelectasis                    0.8057
+  Pneumothorax                   0.8592
+  Pleural Effusion               0.8971
+  Pleural Other                  0.8326
+  Fracture                       0.6621
+  Support Devices                0.9154
+  ------------------------------------
+  Mean AUC                       0.8014
+2026-04-05 03:06:39 | ================================================================================
+2026-04-05 03:15:08 | Epoch 23 | train_loss=0.8723 | interim checkpoint saved | lr=3.99e-05
+2026-04-05 03:15:12 | Epoch  23/50 | train_loss=0.8723 | val_loss=1.1107 | mean_AUC=0.8039 | lr=3.99e-05 | time=513s
+2026-04-05 03:15:12 | 
+  Class                         AUC
+  ------------------------------------
+  No Finding                     0.8549
+  Enlarged Cardiomediastinum     0.7135
+  Cardiomegaly                   0.7986
+  Lung Opacity                   0.7342
+  Lung Lesion                    0.7638
+  Edema                          0.8779
+  Consolidation                  0.7691
+  Pneumonia                      0.7634
+  Atelectasis                    0.8064
+  Pneumothorax                   0.8421
+  Pleural Effusion               0.9002
+  Pleural Other                  0.8273
+  Fracture                       0.6870
+  Support Devices                0.9156
+  ------------------------------------
+  Mean AUC                       0.8039
+2026-04-05 03:15:16 | ================================================================================
+2026-04-05 03:23:44 | Epoch 24 | train_loss=0.8621 | interim checkpoint saved | lr=3.83e-05
+2026-04-05 03:23:49 | Epoch  24/50 | train_loss=0.8621 | val_loss=1.1472 | mean_AUC=0.7961 | lr=3.83e-05 | time=513s
+2026-04-05 03:23:49 | 
+  Class                         AUC
+  ------------------------------------
+  No Finding                     0.8520
+  Enlarged Cardiomediastinum     0.7123
+  Cardiomegaly                   0.7950
+  Lung Opacity                   0.7437
+  Lung Lesion                    0.7705
+  Edema                          0.8790
+  Consolidation                  0.7464
+  Pneumonia                      0.7622
+  Atelectasis                    0.8061
+  Pneumothorax                   0.8243
+  Pleural Effusion               0.8983
+  Pleural Other                  0.8230
+  Fracture                       0.6201
+  Support Devices                0.9126
+  ------------------------------------
+  Mean AUC                       0.7961
+2026-04-05 03:23:53 | ================================================================================

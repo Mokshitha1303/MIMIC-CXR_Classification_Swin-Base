@@ -1,0 +1,50 @@
+2026-04-05 03:37:36 | Log file: ./logs/training_20260405_033736.log
+2026-04-05 03:37:36 | Config: configs/config.yaml | smoke_test=False
+2026-04-05 03:37:37 | Device: cuda — NVIDIA A100-SXM4-80GB
+2026-04-05 03:37:37 | Building datasets …
+[MIMICCXRDataset] split=train | frontal-only (PA+AP) | images=237,972 | classes=14
+[MIMICCXRDataset] split=validate | frontal-only (PA+AP) | images=1,959 | classes=14
+[MIMICCXRDataset] split=test | frontal-only (PA+AP) | images=3,403 | classes=14
+2026-04-05 03:37:58 | Per-class pos_weight (neg/pos ratio, clamped [0.1, 50]):
+2026-04-05 03:37:58 |   No Finding                          1.98
+2026-04-05 03:37:58 |   Enlarged Cardiomediastinum          30.92
+2026-04-05 03:37:58 |   Cardiomegaly                        4.13
+2026-04-05 03:37:58 |   Lung Opacity                        3.47
+2026-04-05 03:37:58 |   Lung Lesion                         35.98
+2026-04-05 03:37:58 |   Edema                               7.40
+2026-04-05 03:37:58 |   Consolidation                       20.19
+2026-04-05 03:37:58 |   Pneumonia                           13.20
+2026-04-05 03:37:58 |   Atelectasis                         4.00
+2026-04-05 03:37:58 |   Pneumothorax                        20.54
+2026-04-05 03:37:58 |   Pleural Effusion                    3.24
+2026-04-05 03:37:58 |   Pleural Other                       50.00
+2026-04-05 03:37:58 |   Fracture                            49.89
+2026-04-05 03:37:58 |   Support Devices                     2.33
+2026-04-05 03:37:58 | Building model …
+[build_model] Creating swin_base_patch4_window7_224.ms_in22k (pretrained=True) …
+[build_model] Parameters: 86.8M total, 86.8M trainable
+2026-04-05 03:38:05 | Resuming from ./checkpoints/latest.pth …
+2026-04-05 03:38:09 | Resumed at epoch 24 | best AUC: 0.8093
+2026-04-05 03:38:09 | [test_only] Loading checkpoint: checkpoints/best_epoch015_auc0.8093.pth
+2026-04-05 03:38:12 | Running test evaluation with 10-crop TTA …
+Test (10-crop):   0%|          | 0/54 [00:00<?, ?it/s]Test (10-crop):   2%|▏         | 1/54 [00:12<10:45, 12.18s/it]Test (10-crop):   4%|▎         | 2/54 [00:12<04:34,  5.28s/it]Test (10-crop):   6%|▌         | 3/54 [00:13<02:36,  3.08s/it]Test (10-crop):   7%|▋         | 4/54 [00:13<01:41,  2.04s/it]Test (10-crop):   9%|▉         | 5/54 [00:13<01:11,  1.47s/it]Test (10-crop):  11%|█         | 6/54 [00:14<00:53,  1.12s/it]Test (10-crop):  13%|█▎        | 7/54 [00:14<00:42,  1.10it/s]Test (10-crop):  15%|█▍        | 8/54 [00:15<00:35,  1.31it/s]Test (10-crop):  17%|█▋        | 9/54 [00:15<00:29,  1.50it/s]Test (10-crop):  19%|█▊        | 10/54 [00:16<00:26,  1.66it/s]Test (10-crop):  20%|██        | 11/54 [00:16<00:23,  1.80it/s]Test (10-crop):  22%|██▏       | 12/54 [00:17<00:22,  1.91it/s]Test (10-crop):  24%|██▍       | 13/54 [00:17<00:21,  1.92it/s]Test (10-crop):  26%|██▌       | 14/54 [00:18<00:29,  1.36it/s]Test (10-crop):  28%|██▊       | 15/54 [00:19<00:25,  1.53it/s]Test (10-crop):  30%|██▉       | 16/54 [00:19<00:22,  1.69it/s]Test (10-crop):  31%|███▏      | 17/54 [00:20<00:20,  1.82it/s]Test (10-crop):  33%|███▎      | 18/54 [00:21<00:31,  1.15it/s]Test (10-crop):  35%|███▌      | 19/54 [00:22<00:26,  1.34it/s]Test (10-crop):  37%|███▋      | 20/54 [00:22<00:24,  1.40it/s]Test (10-crop):  39%|███▉      | 21/54 [00:23<00:21,  1.57it/s]Test (10-crop):  41%|████      | 22/54 [00:24<00:25,  1.24it/s]Test (10-crop):  43%|████▎     | 23/54 [00:25<00:21,  1.41it/s]Test (10-crop):  44%|████▍     | 24/54 [00:26<00:24,  1.23it/s]Test (10-crop):  46%|████▋     | 25/54 [00:26<00:20,  1.42it/s]Test (10-crop):  48%|████▊     | 26/54 [00:27<00:20,  1.36it/s]Test (10-crop):  50%|█████     | 27/54 [00:28<00:21,  1.27it/s]Test (10-crop):  52%|█████▏    | 28/54 [00:29<00:25,  1.03it/s]Test (10-crop):  54%|█████▎    | 29/54 [00:30<00:20,  1.22it/s]Test (10-crop):  56%|█████▌    | 30/54 [00:30<00:16,  1.41it/s]Test (10-crop):  57%|█████▋    | 31/54 [00:31<00:15,  1.49it/s]Test (10-crop):  59%|█████▉    | 32/54 [00:33<00:23,  1.09s/it]Test (10-crop):  61%|██████    | 33/54 [00:33<00:18,  1.11it/s]Test (10-crop):  63%|██████▎   | 34/54 [00:34<00:15,  1.31it/s]Test (10-crop):  65%|██████▍   | 35/54 [00:34<00:13,  1.41it/s]Test (10-crop):  67%|██████▋   | 36/54 [00:36<00:19,  1.11s/it]Test (10-crop):  69%|██████▊   | 37/54 [00:37<00:15,  1.10it/s]Test (10-crop):  70%|███████   | 38/54 [00:37<00:12,  1.29it/s]Test (10-crop):  72%|███████▏  | 39/54 [00:38<00:10,  1.47it/s]Test (10-crop):  74%|███████▍  | 40/54 [00:39<00:13,  1.04it/s]Test (10-crop):  76%|███████▌  | 41/54 [00:40<00:10,  1.24it/s]Test (10-crop):  78%|███████▊  | 42/54 [00:40<00:08,  1.42it/s]Test (10-crop):  80%|███████▉  | 43/54 [00:41<00:06,  1.59it/s]Test (10-crop):  81%|████████▏ | 44/54 [00:43<00:11,  1.11s/it]Test (10-crop):  83%|████████▎ | 45/54 [00:43<00:08,  1.09it/s]Test (10-crop):  85%|████████▌ | 46/54 [00:44<00:06,  1.29it/s]Test (10-crop):  87%|████████▋ | 47/54 [00:44<00:04,  1.47it/s]Test (10-crop):  89%|████████▉ | 48/54 [00:46<00:05,  1.13it/s]Test (10-crop):  91%|█████████ | 49/54 [00:46<00:03,  1.32it/s]Test (10-crop):  93%|█████████▎| 50/54 [00:47<00:02,  1.50it/s]Test (10-crop):  94%|█████████▍| 51/54 [00:47<00:01,  1.66it/s]Test (10-crop):  96%|█████████▋| 52/54 [00:48<00:01,  1.23it/s]Test (10-crop):  98%|█████████▊| 53/54 [00:49<00:00,  1.42it/s]                                                               2026-04-05 03:39:02 | Test Mean AUC (10-crop TTA): 0.7810
+2026-04-05 03:39:02 | 
+  Class                         AUC
+  ------------------------------------
+  No Finding                     0.7946
+  Enlarged Cardiomediastinum     0.6586
+  Cardiomegaly                   0.7639
+  Lung Opacity                   0.7076
+  Lung Lesion                    0.7316
+  Edema                          0.8276
+  Consolidation                  0.7246
+  Pneumonia                      0.7383
+  Atelectasis                    0.7528
+  Pneumothorax                   0.8312
+  Pleural Effusion               0.8716
+  Pleural Other                  0.8840
+  Fracture                       0.7594
+  Support Devices                0.8881
+  ------------------------------------
+  Mean AUC                       0.7810
+2026-04-05 03:39:03 | Final ROC curves saved to ./plots/final_test_roc.png

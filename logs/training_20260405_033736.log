@@ -1,0 +1,45 @@
+2026-04-05 03:37:36 | Log file: ./logs/training_20260405_033736.log
+2026-04-05 03:37:36 | Config: configs/config.yaml | smoke_test=False
+2026-04-05 03:37:37 | Device: cuda — NVIDIA A100-SXM4-80GB
+2026-04-05 03:37:37 | Building datasets …
+2026-04-05 03:37:58 | Per-class pos_weight (neg/pos ratio, clamped [0.1, 50]):
+2026-04-05 03:37:58 |   No Finding                          1.98
+2026-04-05 03:37:58 |   Enlarged Cardiomediastinum          30.92
+2026-04-05 03:37:58 |   Cardiomegaly                        4.13
+2026-04-05 03:37:58 |   Lung Opacity                        3.47
+2026-04-05 03:37:58 |   Lung Lesion                         35.98
+2026-04-05 03:37:58 |   Edema                               7.40
+2026-04-05 03:37:58 |   Consolidation                       20.19
+2026-04-05 03:37:58 |   Pneumonia                           13.20
+2026-04-05 03:37:58 |   Atelectasis                         4.00
+2026-04-05 03:37:58 |   Pneumothorax                        20.54
+2026-04-05 03:37:58 |   Pleural Effusion                    3.24
+2026-04-05 03:37:58 |   Pleural Other                       50.00
+2026-04-05 03:37:58 |   Fracture                            49.89
+2026-04-05 03:37:58 |   Support Devices                     2.33
+2026-04-05 03:37:58 | Building model …
+2026-04-05 03:38:05 | Resuming from ./checkpoints/latest.pth …
+2026-04-05 03:38:09 | Resumed at epoch 24 | best AUC: 0.8093
+2026-04-05 03:38:09 | [test_only] Loading checkpoint: checkpoints/best_epoch015_auc0.8093.pth
+2026-04-05 03:38:12 | Running test evaluation with 10-crop TTA …
+2026-04-05 03:39:02 | Test Mean AUC (10-crop TTA): 0.7810
+2026-04-05 03:39:02 | 
+  Class                         AUC
+  ------------------------------------
+  No Finding                     0.7946
+  Enlarged Cardiomediastinum     0.6586
+  Cardiomegaly                   0.7639
+  Lung Opacity                   0.7076
+  Lung Lesion                    0.7316
+  Edema                          0.8276
+  Consolidation                  0.7246
+  Pneumonia                      0.7383
+  Atelectasis                    0.7528
+  Pneumothorax                   0.8312
+  Pleural Effusion               0.8716
+  Pleural Other                  0.8840
+  Fracture                       0.7594
+  Support Devices                0.8881
+  ------------------------------------
+  Mean AUC                       0.7810
+2026-04-05 03:39:03 | Final ROC curves saved to ./plots/final_test_roc.png

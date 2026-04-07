@@ -1,0 +1,60 @@
+# ============================================================
+# MIMIC-CXR Classification — Configuration (v2 — all fixes)
+# ============================================================
+
+data:
+  # Use resized images (run scripts/preprocess_resize.py first)
+  data_dir:     /scratch/mmohan21/MIMIC_CXR_Classification/data/resized
+  # Original MIMIC root (only needed for CSV files)
+  mimic_root:   /scratch/pkrish52/MIMIC
+
+  split_csv:    mimic-cxr-2.0.0-split.csv
+  label_csv:    mimic-cxr-2.0.0-chexpert.csv
+  metadata_csv: mimic-cxr-2.0.0-metadata.csv
+
+  num_classes:  14
+  img_size:     256    # resize before crop
+  crop_size:    224    # final model input
+
+  # FIX: CXR-specific normalization (mean/std computed from chest X-ray images)
+  normalization: chestx-ray   # options: chestx-ray | imagenet
+
+  # FIX: Keep only PA and AP frontal views — laterals share labels but look
+  #      completely different, adding systematic label noise
+  frontal_only: true
+
+  uncertain_label: LSR-Ones   # -1 → uniform(0.55, 0.85) during training
+  unknown_label:   0           # blank/NaN → 0
+
+model:
+  name:               swin_base_patch4_window7_224.ms_in22k
+  pretrained:         true     # ImageNet-21k weights from timm (default)
+  pretrained_weights: null     # /path/to/Ark_swinBase.pth.tar for ARK+ init
+  ark_checkpoint_key: teacher
+
+training:
+  batch_size:    128
+  epochs:        50
+
+  optimizer:     adamw
+  # FIX: Lower LR (5e-5 instead of 1e-4) — safer for fine-tuning pretrained
+  lr:            5.0e-5
+  weight_decay:  0.05
+
+  # FIX: Longer warmup (10 epochs) to protect pretrained representations
+  warmup_epochs: 10
+  min_lr:        1.0e-6
+
+  grad_clip:     1.0
+
+  # FIX: Stable DataLoader — 8 train workers, val/test capped at 4
+  workers:       8
+  seed:          42
+  print_freq:    100
+
+output:
+  checkpoint_dir: ./checkpoints
+  log_dir:        ./logs
+  plot_dir:       ./plots
+  plot_file:      training_progress.png
+  top_k_models:   3
