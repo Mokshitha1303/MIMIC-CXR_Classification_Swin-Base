@@ -62,20 +62,6 @@ No Finding, Enlarged Cardiomediastinum, Cardiomegaly, Lung Opacity, Lung Lesion,
 
 | Pathology | Ours (Swin-B) | Foundation X (MIMIC-II†) |
 |-----------|:-------------:|:------------------------:|
-| No Finding | 0.7946 | — |
-| Enlarged Cardiomediastinum | 0.6586 | — |
-| Cardiomegaly | 0.7639 | — |
-| Lung Opacity | 0.7076 | — |
-| Lung Lesion | 0.7316 | — |
-| Edema | 0.8276 | — |
-| Consolidation | 0.7246 | — |
-| Pneumonia | 0.7383 | — |
-| Atelectasis | 0.7528 | — |
-| Pneumothorax | 0.8312 | — |
-| Pleural Effusion | 0.8716 | — |
-| Pleural Other | 0.8840 | — |
-| Fracture | 0.7594 | — |
-| Support Devices | 0.8881 | — |
 | **Mean AUC** | **0.7810** | **0.7894** |
 
 > †Foundation X reports a single mean AUC of **0.7894** on their MIMIC-II split (baseline Swin-B: 0.7912). Per-class breakdown is not reported in the paper. Foundation X trains jointly on 11 datasets including classification, localization, and segmentation tasks; direct dataset and split alignment with MIMIC-CXR v2.0.0 may differ.
