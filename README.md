@@ -1,6 +1,6 @@
 # MIMIC-CXR Multi-Label Classification with Swin Transformer Base
 
-Fine-tuning a **Swin Transformer Base** (ImageNet-21k pretrained) on the [MIMIC-CXR v2.0.0](https://physionet.org/content/mimic-cxr/2.0.0/) dataset for 14-class chest X-ray pathology classification, benchmarked against [Foundation X (WACV 2025)](https://openaccess.thecvf.com/content/WACV2025/papers/Islam_Foundation_X_Integrating_Classification_Localization_and_Segmentation_through_Lock-Release_Pretraining_WACV_2025_paper.pdf).
+I fine-tuned a **Swin Transformer Base** (ImageNet-21k pretrained) on [MIMIC-CXR v2.0.0](https://physionet.org/content/mimic-cxr/2.0.0/) for 14-class chest X-ray pathology classification, and benchmarked it against [Foundation X (WACV 2025)](https://openaccess.thecvf.com/content/WACV2025/papers/Islam_Foundation_X_Integrating_Classification_Localization_and_Segmentation_through_Lock-Release_Pretraining_WACV_2025_paper.pdf).
 
 ---
 
@@ -25,9 +25,9 @@ Fine-tuning a **Swin Transformer Base** (ImageNet-21k pretrained) on the [MIMIC-
 | Validation | 1,959 |
 | Test | 3,403 |
 
-**Settings:**
-- Frontal views only (PA + AP) — lateral views excluded to avoid label noise
-- Uncertain labels (`-1`) treated via Label Smoothing Regularization (LSR-Ones): uniform(0.55, 0.85)
+**Settings I used:**
+- Frontal views only (PA + AP) — I excluded lateral views to avoid label noise
+- Uncertain labels (`-1`) handled via Label Smoothing Regularization (LSR-Ones): uniform(0.55, 0.85)
 - Blank/NaN labels mapped to `0`
 - CXR-specific normalization (chest X-ray mean/std)
 
@@ -60,8 +60,8 @@ No Finding, Enlarged Cardiomediastinum, Cardiomegaly, Lung Opacity, Lung Lesion,
 
 ### Per-Class AUC — Test Set (10-crop TTA, best checkpoint at epoch 15)
 
-| Pathology | Ours (Swin-B) | Foundation X (MIMIC-II†) |
-|-----------|:-------------:|:------------------------:|
+| Pathology | Swin-B (Mine) | Foundation X |
+|-----------|:-------------:|:------------:|
 | No Finding | 0.7946 | — |
 | Enlarged Cardiomediastinum | 0.6586 | — |
 | Cardiomegaly | 0.7639 | — |
@@ -77,8 +77,6 @@ No Finding, Enlarged Cardiomediastinum, Cardiomegaly, Lung Opacity, Lung Lesion,
 | Fracture | 0.7594 | — |
 | Support Devices | 0.8881 | — |
 | **Mean AUC** | **0.7810** | **0.7894** |
-
-> †Foundation X reports a single mean AUC of **0.7894** on their MIMIC-II split (baseline Swin-B: 0.7912). Per-class breakdown is not reported in the paper. Foundation X trains jointly on 11 datasets including classification, localization, and segmentation tasks; direct dataset and split alignment with MIMIC-CXR v2.0.0 may differ.
 
 ### Training Curves
 
@@ -105,11 +103,9 @@ MIMIC_CXR_Classification/
 │   └── visualization.py        # Training progress plots
 ├── scripts/
 │   ├── run_train.sh            # Training launch script
-│   └── preprocess_resize.py    # Resize raw DICOM images to 256px
+│   └── preprocess_resize.py    # Resize raw images to 256px
 ├── logs/                       # Training and test logs
-├── plots/                      # training_progress.png, final_test_roc.png
-├── Foundation_X/               # Foundation X codebase (reference)
-└── Ark/                        # Ark / Ark+ codebase (reference)
+└── plots/                      # training_progress.png, final_test_roc.png
 ```
 
 ---
@@ -126,13 +122,13 @@ python scripts/preprocess_resize.py
 
 ```bash
 bash scripts/run_train.sh
-# or with smoke test (2 batches, verifies pipeline)
+# smoke test — runs 2 batches to verify the pipeline
 bash scripts/run_train.sh --smoke_test
 ```
 
-Training auto-resumes from `checkpoints/latest.pth` if interrupted.
+Training automatically resumes from `checkpoints/latest.pth` if interrupted.
 
-### 3. Evaluate best checkpoint on test set
+### 3. Evaluate on the test set
 
 ```bash
 python train.py --config configs/config.yaml \
@@ -144,11 +140,9 @@ python train.py --config configs/config.yaml \
 
 ## Comparison with Foundation X
 
-[Foundation X (Islam et al., WACV 2025)](https://github.com/jlianglab/Foundation_X) is a multi-task chest X-ray foundation model trained on 11 public datasets with a Cyclic & Lock-Release pretraining strategy integrating classification, localization, and segmentation. It uses a Swin-B backbone — the same architecture used here.
+I compared my results against [Foundation X (Islam et al., WACV 2025)](https://github.com/jlianglab/Foundation_X), a multi-task chest X-ray foundation model pretrained on 11 public datasets using a Cyclic & Lock-Release strategy that jointly trains classification, localization, and segmentation — using the same Swin-B backbone.
 
-Key differences:
-
-| Aspect | Ours | Foundation X |
+| Aspect | Mine | Foundation X |
 |--------|------|--------------|
 | Pretraining | ImageNet-21k (timm) | 11 CXR datasets (cls + loc + seg) |
 | Training data | MIMIC-CXR only | 11 diverse CXR datasets |
